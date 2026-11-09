@@ -1,0 +1,35 @@
+# data (released on Zenodo)
+data/
+*.mat
+*.npy
+*.npz
+
+# checkpoints and run outputs (checkpoints are on GitHub Releases)
+*.pt
+*.pth
+results*/
+res*/
+logs/
+release/
+out/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.ipynb_checkpoints/
+
+# MATLAB / Simulink caches
+slprj/
+*.slxc
+*.asv
+*.autosave
+
+# OS / editors
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
