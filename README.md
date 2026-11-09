@@ -1,6 +1,6 @@
-# PIDS-Net: Physics-Informed Lightweight Fault Classification and Location in Power Systems
+# PIDS-Net: A Physics-Informed Dual-Stream Network for Power System Fault Diagnosis
 
-Code for the paper *PIDS-Net: Physics-Informed Lightweight Fault Classification and Location in Power Systems* (TODO: authors, journal, year, DOI).
+Code for the paper *PIDS-Net: A Physics-Informed Dual-Stream Network for Power System Fault Diagnosis* (TODO: authors, journal, year, DOI).
 
 PIDS-Net classifies the fault type (15 classes) and identifies the faulted bus (15 classes) of the IEEE 14-bus system from one cycle of current at five monitoring points. A fixed front end with no trainable parameters (relay-rate sampling, incremental currents, Clarke transform, per-window peak normalization) feeds two small 1-D CNNs with separate weights, one per task.
 
@@ -36,7 +36,7 @@ If you train on a GPU, first install the PyTorch build that matches your CUDA ve
 
 ## Data
 
-The data are on Google Drive: **TODO: folder link**.
+The data are on Google Drive: **[link](https://drive.google.com/drive/folders/1Ig2TNYC-RkXPQ78kd5xpdm16im7bSBMv?usp=sharing)**.
 
 | File | Needed for |
 |---|---|
@@ -63,7 +63,7 @@ Contents of `data/processed/<dataset>/`:
 - `splits.npz`: run indices of every split (`random`, `ood_load`, `ood_rf`; `paper` for the original protocol).
 - `lite_d100.npz`: the 7.7 kHz copy used by PIDS-Net. Other variants (`lite_d50/200/400`, `_bw4` for the anti-aliasing filter, `_ct4` for the saturated-CT copies) and `chain_ratings.json` (CT ratings) are built automatically on first use.
 
-To regenerate the data from the Simulink model, run the simulations (TODO: path to the model and the generation script), put the `.mat` runs in `data/raw/varied/` and run `python scripts/prepare_data.py varied`.
+To regenerate the data from the Simulink model, run the simulations (matlab/generate_dataset.m and matlab/ieee14_fault.mdl), put the `.mat` runs in `data/raw/varied/` and run `python scripts/prepare_data.py varied`.
 
 ## Pretrained models
 
@@ -124,15 +124,15 @@ scripts/        prepare_data, train, run_experiments, classical, summarize, erro
 
 ```bibtex
 @article{TODO,
-  title   = {{PIDS-Net}: Physics-Informed Lightweight Fault Classification and Location in Power Systems},
+  title   = {{PIDS-Net}: A Physics-Informed Dual-Stream Network for Power System Fault Diagnosis},
   author  = {TODO},
   journal = {TODO},
   year    = {TODO}
 }
 ```
 
-[1] TODO: full reference of Thomas et al., IEEE Trans. Instrum. Meas., 2023.
+[1] J. B. Thomas, S. G. Chaudhari, S. K. V., and N. K. Verma, “Cnn-based transformer model for fault detection in power system networks,” IEEE Transactions on Instrumentation and Measurement, vol. 72, pp. 1–10, 2023.
 
 ## License
 
-Code: MIT (see `LICENSE`). Data: TODO (e.g., CC BY 4.0).
+Code: MIT (see `LICENSE`). Data: CC BY 4.0 (see `LICENSE`).
